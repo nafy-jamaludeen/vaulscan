@@ -488,7 +488,7 @@ function renderReviews(data){
     </div>`).join('');
 }
 async function submitReview(){
-  const be=document.getElementById('beIn').value.trim()||'http://localhost:8000';
+  const be=document.getElementById('beIn').value.trim()||'value="https://vaultscan-production.up.railway.app"';
   const name=document.getElementById('rvName').value.trim();
   const role=document.getElementById('rvRole').value.trim();
   const comment=document.getElementById('rvComment').value.trim();
