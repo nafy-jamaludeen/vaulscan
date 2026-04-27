@@ -335,7 +335,7 @@ async function startScan(){
   let url=document.getElementById('urlIn').value.trim();
   if(!url){showErr('Enter a URL.');return;}
   if(!url.startsWith('http'))url='https://'+url;
-  const be=document.getElementById('beIn').value.trim()||'http://localhost:8000';
+  const be=document.getElementById('beIn').value.trim()||'https://vaulscan.onrender.com';
   document.getElementById('errBox').classList.remove('on');
   document.getElementById('results').classList.remove('on');
   document.getElementById('loading').classList.add('on');
@@ -466,7 +466,7 @@ function hlStars(n){document.querySelectorAll('#starPicker span').forEach(s=>s.c
 function starsHtml(n){return '★'.repeat(n)+'☆'.repeat(5-n);}
 function avColor(name){let h=0;for(let c of name)h=(h*31+c.charCodeAt(0))%AV_COLORS.length;return AV_COLORS[h];}
 async function loadReviews(){
-  const be=document.getElementById('beIn').value.trim()||'http://localhost:8000';
+  const be=document.getElementById('beIn').value.trim()||'https://vaulscan.onrender.com';
   try{const res=await fetch(`${be}/reviews`);renderReviews(await res.json());}catch(e){console.warn('Reviews:',e);}
 }
 function renderReviews(data){
@@ -488,7 +488,7 @@ function renderReviews(data){
     </div>`).join('');
 }
 async function submitReview(){
-  const be=document.getElementById('beIn').value.trim()||'value="https://vaultscan-production.up.railway.app"';
+  const be=document.getElementById('beIn').value.trim()||'https://vaulscan.onrender.com';
   const name=document.getElementById('rvName').value.trim();
   const role=document.getElementById('rvRole').value.trim();
   const comment=document.getElementById('rvComment').value.trim();
